@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="model.user"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +14,26 @@
     </head>
     <body>
         <h1>Home!</h1>
+        
+        <%
+        if(session.getAttribute("user")!=null){
+           user u = (user)session.getAttribute("user");
+           
+           %>
+        
+           <p>name:<%= u.getName() %> </p>
+           <p>mobile<%= u.getName()%> </p>
+             <p>country<%= u.getCountry()%> </p>
+        
+        <%
+            
+            }else{
+            
+            response.sendRedirect("login.jsp");
+            
+            }
+        
+        
+        %>
     </body>
 </html>

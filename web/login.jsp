@@ -14,6 +14,15 @@
     <body>
         <h1>Sign In!</h1>
         
+        <%
+        if(request.getParameter("error")!= null){
+                %>
+        
+                <h3 class="aa" ><%= request.getParameter("error") %></h3>
+        <%
+            }
+        %>
+        
         <form action="login" method="POST">
             
              <div class="mm">mobile</div>
